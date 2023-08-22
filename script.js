@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const hintElement = document.getElementById('hint');
     const hintButton = document.getElementById('hintButton');
     const checkButton = document.getElementById('checkButton');
+    const summaryElement = document.getElementById('summary');
+    const answerSummaryElement = document.getElementById('answerSummary');
+
+    const MAX_QUESTIONS = 5;
+    let currentQuestion = 0;
+    let correctAnswers = 0;
+    let questionsAndAnswers = [];
 
     // Erklärung zur Lösung der Aufgabe
     explanationElement.textContent = 'Um die Aufgabe zu lösen, führen Sie die angegebenen Rechenschritte aus und geben Sie das Ergebnis ein. Denken Sie daran, die Grundrechenarten zu verwenden.';
@@ -69,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return mathProblem;
     }
 
-    // Überprüfung der Antwort
+    // Überprüfung der Antwort und Verwaltung der Fragen
     checkButton.addEventListener('click', function() {
         const userAnswer = parseFloat(answerElement.value);
 
@@ -80,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (userAnswer === mathProblem.answer) {
                 resultElement.textContent = 'Richtig!';
+                correctAnswers++;
             } else {
                 resultElement.textContent = 'Falsch. Versuchen Sie es erneut.';
                 incrementFailedAttempts(); // Erhöht die Anzahl der Fehlversuche
@@ -87,12 +95,70 @@ document.addEventListener('DOMContentLoaded', function() {
             answerElement.value = '';
             updateFailedAttemptsDisplay(); // Aktualisiert die Anzeige der Fehlversuche
             hintElement.textContent = ''; // Setze den Hinweis zurück
+
+            questionsAndAnswers.push({
+                question: mathProblem.question,
+                userAnswer,
+                correctAnswer: mathProblem.answer,
+                isCorrect: userAnswer === mathProblem.answer
+            });
+
+            currentQuestion++;
+            if (currentQuestion === MAX_QUESTIONS) {
+                showSummary();
+            }
         }
     });
+
+    // Zeige die Zusammenfassung der Fragen und Antworten an
+    function showSummary() {
+        questionElement.style.display = 'none';
+        answerElement.style.display = 'none';
+        checkButton.style.display = 'none';
+        hintButton.style.display = 'none';
+        resultElement.style.display = 'none';
+        explanationElement.style.display = 'none';
+        summaryElement.style.display = 'block';
+
+        answerSummaryElement.innerHTML = '';
+
+        for (const qa of questionsAndAnswers) {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${qa.question} Ihre Antwort: ${qa.userAnswer}, Korrekte Antwort: ${qa.correctAnswer}, ${qa.isCorrect ? 'Richtig' : 'Falsch'}`;
+            answerSummaryElement.appendChild(listItem);
+        }
+
+        const finalScore = (correctAnswers / MAX_QUESTIONS) * 100;
+        answerSummaryElement.innerHTML += `<p>Ihre Gesamtpunktzahl: ${finalScore.toFixed(2)}%</p>`;
+    }
 
     // Initialisiere die erste Frage
     generateAndDisplayNewQuestion();
 
     // Die Anzahl der Fehlversuche beim Laden der Seite anzeigen
     updateFailedAttemptsDisplay();
+
+    // Funktion zum Herunterladen der Zusammenfassung als CSV
+    downloadCsvButton.addEventListener('click', function() {
+        const csvContent = generateCsvContent();
+
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'Ergebnis.csv';
+        link.click();
+    });
+
+    // Funktion zum Generieren des CSV-Inhalts
+    function generateCsvContent() {
+        let csv = 'Frage,Ihre Antwort,Korrekte Antwort,Ergebnis\n';
+
+        for (const qa of questionsAndAnswers) {
+            const result = qa.isCorrect ? 'Richtig' : 'Falsch';
+            csv += `"${qa.question}","${qa.userAnswer}","${qa.correctAnswer}","${result}"\n`;
+        }
+
+        return csv;
+    }
+
 });
