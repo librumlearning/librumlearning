@@ -66,5 +66,19 @@
             color: #293241; /* Dunkelblau für das Ergebnis */
         }
 
+/* Neue CSS-Regeln für die Antwortzusammenfassung */
+#answerSummary li {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.correct-answer {
+    color: green;
+}
+
+.incorrect-answer {
+    color: red;
+}
 
 

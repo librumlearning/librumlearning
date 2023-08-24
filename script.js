@@ -128,6 +128,20 @@ document.addEventListener('DOMContentLoaded', function() {
             answerSummaryElement.appendChild(listItem);
         }
 
+        for (const qa of questionsAndAnswers) {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `${qa.question} Ihre Antwort: ${qa.userAnswer}, Korrekte Antwort: ${qa.correctAnswer}, ${qa.isCorrect ? 'Richtig' : 'Falsch'}`;
+            
+            // Füge CSS-Klassen basierend auf der Antwort hinzu
+            if (qa.isCorrect) {
+                listItem.classList.add('correct-answer');
+            } else {
+                listItem.classList.add('incorrect-answer');
+            }
+
+            answerSummaryElement.appendChild(listItem);
+        }
+
         const finalScore = (correctAnswers / MAX_QUESTIONS) * 100;
         answerSummaryElement.innerHTML += `<p>Ihre Gesamtpunktzahl: ${finalScore.toFixed(2)}%</p>`;
     }
