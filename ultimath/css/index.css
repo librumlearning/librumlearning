@@ -233,7 +233,7 @@ nav ul li a:hover {
 .featured-course.alternate-style .course-image {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center; /* hier kann man das Bild passend zentrieren*/
     align-items: center;
     padding-left: 20px; /* Abstand zwischen Text und Bild */
 }
@@ -241,7 +241,7 @@ nav ul li a:hover {
 /* Alternate course image img styling */
 .featured-course.alternate-style .course-image img {
     max-width: 100%;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
