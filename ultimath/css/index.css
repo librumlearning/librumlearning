@@ -53,7 +53,7 @@ nav ul li a:hover {
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 40px 20px;featured-course
 }
 
 /* Featured and popular courses styling */
@@ -290,6 +290,26 @@ nav ul li a:hover {
 
 .required-field {
     color: red;
+}
+
+.contact-form h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+/* Course subtitle styling */
+.contact-form h3 {
+    font-size: 1.5rem; /* Größe für h3-Überschriften */
+    margin-bottom: 8px;
+    color: #2c3e50;
+}
+
+.contact-form p {
+    font-size: 1.1rem;
+    opacity: 0.7;
+    line-height: 1.4;
+    color: #555;
 }
 
 /* ... Weiterer vorheriger CSS-Code ... */
