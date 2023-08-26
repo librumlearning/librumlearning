@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Crystal Math Online Courses</title>
+        <link rel="stylesheet" href="css/index.css"> <!-- Verlinke hier deine CSS-Datei für das Styling -->
+    </head>
+<body>
+    <nav>
+        <a href="#" class="logo"><img src="logoUltimath.png" alt="Logo"></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Kurse</a></li>
+            <li><a href="#">Über uns</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+    
+
+    <div class="contact-form">
+        <p> Deine Meinung ist uns wichtig! Bei Fragen, Anliegen oder einfach nur, um Hallo zu sagen, nutze gerne das Kontaktformular unten. Wir sind hier, um dir zu helfen und freuen uns auf deine Nachricht.</p>
+        <form action="deine_verarbeitungs_script.php" method="POST">
+            <label for="vorname">Vorname:</label>
+            <input type="text" id="vorname" name="vorname" placeholder="Dein Vorname">
+
+            <label for="nachname">Nachname:</label>
+            <input type="text" id="nachname" name="nachname" placeholder="Dein Nachname">
+
+            <label for="email">E-Mail-Adresse<span class="required-field">*</span>:</label>
+            <input type="email" id="email" name="email" placeholder="Deine E-Mail-Adresse" required>
+
+            <label for="nachricht">Nachricht<span class="required-field">*</span>:</label>
+            <textarea id="nachricht" name="nachricht" placeholder="Deine Nachricht" rows="4" required></textarea>
+
+            <button type="submit">Nachricht senden</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -248,3 +248,48 @@ nav ul li a:hover {
 /* ... Weitere vorherige CSS-Code ... */
 
 
+/* ... Vorheriger CSS-Code ... */
+
+/* Kontaktformular Styling */
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff; /* hier farbe der Box vom kontakformular*/
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.required-field {
+    color: red;
+}
+
+/* ... Weiterer vorheriger CSS-Code ... */
