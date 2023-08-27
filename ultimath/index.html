@@ -14,15 +14,8 @@
         <p>Your Gateway to Mathematical Excellence</p>
     </header> -->
 
-    <nav>
-        <a href="#" class="logo"><img src="logoUltimath.png" alt="Logo"></a>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Kurse</a></li>
-            <li><a href="#">Über uns</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-    </nav>
+
+    <div id="header"></div>
     
  
     <main>
@@ -71,8 +64,21 @@
         </section>
 
         
-    <footer>
-        <p>&copy; 2023 Ultimath.</p>
-    </footer>
+    <div id="footer"></div>
+    <script>
+        // JavaScript: Header-Inhalt abrufen und einfügen
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        // JavaScript: Footer-Inhalt abrufen und einfügen
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
 </body>
 </html>
