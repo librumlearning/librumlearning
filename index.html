@@ -7,7 +7,70 @@
     <link rel="stylesheet" href="css/index.css"> <!-- Verlinke hier deine CSS-Datei für das Styling -->
 </head>
 <body>
-    <p>Egal, ob Du Schüler, Student oder Lernender bist, UltiMath begleitet Dich. Besuche uns und entdecke, wie wir Deine Mathematikkenntnisse auf das nächste Level bringen können!</p>
 
-      </body>
+      
+    <!--<header>
+        <h1>Welcome to Ultimath</h1>
+        <p>Your Gateway to Mathematical Excellence</p>
+    </header> -->
+
+
+    <div id="header"></div>
+    
+ 
+    <main>
+        <div class="course-content alternate-course">
+            <div class="featured-course alternate-style">
+                <div class="course-text">
+                    <h2>Willkommen bei UltiMath – Deiner Quelle für Mathematik-Hilfe!</h2>
+                    <p>Tauche ein in die Welt der Mathematik-Hilfe bei UltiMath! Hier findest Du alles, was Du brauchst, um Deine mathematischen Fähigkeiten zu stärken. Wir bieten digitale Kurse, dynamische Aufgaben und klare Erklärungen, um Dir zu helfen, Mathematik besser zu verstehen und zu meistern.</p>
+                    <p>Egal, ob Du Schüler, Student oder Lernender bist, UltiMath begleitet Dich. Besuche uns und entdecke, wie wir Deine Mathematikkenntnisse auf das nächste Level bringen können!</p>
+                </div>
+                    <div class="course-image">
+                        <img src="Bilder/bilderUltimath/tafelGleichung.png" alt="Course Image">
+                   </div>
+                </div>
+        </div>
+
+        <div class="course-content alternate-course">
+            <div class="featured-course alternate-style">
+                <div class="course-text">
+                    <h2>Vorbereitung:Matheabitur 2024 (Baden-Württemberg)</h2>
+                    <p>In den kommenden Wochen werden wir eine Mini-Matheabitur für die Abiturvorbereitung 2024 veröffentlichen. Der aktuelle Status dieses Projekts wird hier dokumentiert und kann hier getestet werden.</p>
+                    <a href="#" class="btn">Probe-Matheabitur 2024</a>
+                </div>
+                    <div class="course-image">
+                        <img src="Bilder/WappenBundesländer/wappenBaWü.png" alt="Course Image">
+                   </div>
+                   
+                </div>
+        </div>
+
+
+        </section>
+        <section class="featured-course">
+            <h2>Vorbereitungskurs: Matheabitur 2024 (Baden-Württemberg)</h2>
+            <p>In den kommenden Wochen werden wir eine Mini-Matheabitur für die Abiturvorbereitung 2024 veröffentlichen. Der aktuelle Status dieses Projekts wird hier dokumentiert und kann hier getestet werden.</p>
+            <a href="#" class="btn">Jetzt anmelden</a>
+        </section>
+
+
+        
+    <div id="footer"></div>
+    <script>
+        // JavaScript: Header-Inhalt abrufen und einfügen
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        // JavaScript: Footer-Inhalt abrufen und einfügen
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+</body>
 </html>
