@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystal Math Online Courses</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+
+      
+    <!--<header>
+        <h1>Welcome to Ultimath</h1>
+        <p>Your Gateway to Mathematical Excellence</p>
+    </header> -->
+
+
+    <div id="header"></div>
+    <main>
+        <section class="featured-course">
+            <h2>Die Unendlichkeit der Primzahlen</h2>
+            <p>Hier dreht es sich um einen sehr schönen und eleganten Beweis, warum es unendlich viele Primzahlen gibt. Hier zur Wiederholung die Definition einer Primzahl:</p>
+            <p>Eine Zahl heißt Primzahl genau dann wenn es sich um eine natürliche Zahl echt größer als 1 handelt, welche nur durch sich selbst und 1 teilbar ist.</p>
+            <p>Wir zählen ganze Zahl, die größer als 1 und nur durch 1 und sich selbst teilbar ist.</p>
+            <p>2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199</p>
+            <p>Wir stellen uns nun die Frage ob es nun endlich viele Primzahlen oder unendlich viele davon gibt.</p>
+            <button id="showTextButton">Beweis</button>
+            <div id="textSection" style="display: none;">
+                <p>Widerspruchsbeweis: Angenommen es existieren nur endlich viele Primzahlen. </p>
+                <p>Klar ist 2 ist die erste Primzahl, welche wir mit \(p_1\) bezeichnen. Klar ist auch, dass 3 ist die zweite Primzahl, welche wir mit \(p_2\)  bezeichnen. Die Zahl 5 wird dann mit \(p_3\), die Zahl 7 mit \(p_4\) , usw. </p>
+                <p>Weil wir angenommen haben, dass es nur endlich viel Primzahlen gibt, wird es auch eine letzte Primzahl geben, welche wir mit p_n  bezeichnen, wobei n  die letzte Zahl bzw. größte Primzahl bezeichnet. Weil p_n  die größte Primzahl ist, kann die folgende Zahl </p>
+                <p>\((p_1\cdot p_2 \cdot p_3 \cdot p_4 \cdot... \cdot p_{n-1}\cdot p_n)+1\)</p>
+                <p>keine Primzahl sein, weil \(p_n\)  die Größte war. Die von uns erschaffene Zahl ist eine natürliche Zahl und sie ist auch echt größer 1. Daraus folgt sie muss durch eine andere Zahl teilbar sein außer sich selbst und der Zahl 1. Also muss die Zahl durch \(p_2\) oder \(p_3\) oder \(p_4\) was nicht sein kann, denn man sieht an der Zahl            </p>
+                <p>\( (p_1\cdot p_2 \cdot p_3 \cdot p_4 \cdot... \cdot p_{n-1}\cdot p_n)+1, \)</p>
+                <p>dass das linke Produkt die Eigenschaft erfüllt, aber die 1 als Summand nicht, was den Widerspruch ergibt. Die logische Konsequenz daraus ist, dass die Aussage: “Es existieren nur endlich viele Primzahlen” falsch ist und das Gegenteil gelten muss.</p>
+            </div>
+        </section>
+
+
+        
+    <div id="footer"></div>
+    <script>
+        // JavaScript: Header-Inhalt abrufen und einfügen
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        // JavaScript: Footer-Inhalt abrufen und einfügen
+        fetch('../footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+
+        <!-- ... andere Meta- und Title-Tags ... -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+
+    <script>
+     const showTextButton = document.getElementById('showTextButton');
+        const textSection = document.getElementById('textSection');
+
+        showTextButton.addEventListener('click', () => {
+            textSection.style.display = 'block';
+            showTextButton.style.display = 'none'; // Button ausblenden, nachdem der Text angezeigt wurde
+        });
+    </script>
+
+</body>
+</html>
