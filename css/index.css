@@ -196,10 +196,7 @@ nav ul li a:hover {
 
 /* ... Vorheriger CSS-Code ... */
 
-/* Alternate course content styling */
-.alternate-course {
-    /* Stil für die alternate-course Klasse */
-}
+
 
 /* Alternate course styling */
 .featured-course.alternate-style {
@@ -245,10 +242,6 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* ... Weitere vorherige CSS-Code ... */
-
-
-/* ... Vorheriger CSS-Code ... */
 
 /* Kontaktformular Styling */
 .contact-form {
@@ -343,5 +336,3 @@ nav ul li .sub-menu li a {
 nav ul li .sub-menu li a:hover {
     color: #3498db;
 }
-
-/* ... Weitere vorherige CSS-Code ... */
