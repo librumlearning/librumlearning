@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystal Math Online Courses</title>
+    <link rel="stylesheet" href="css/index.css"> <!-- Verlinke hier deine CSS-Datei für das Styling -->
+</head>
+<body>
+
+      
+    <!--<header>
+        <h1>Welcome to Ultimath</h1>
+        <p>Your Gateway to Mathematical Excellence</p>
+    </header> -->
+
+    <div id="header"></div>
+    
+ 
+    <main>
+        <div class="course-content alternate-course">
+            <div class="featured-course alternate-style">
+                <div class="course-text">
+                    <h2>Bartosch Ruszkowski</h2>
+                    <p>Als Geschäftsführer der Librum Learning UG und als engagierter Mathematiker möchte ich die Signifikanz der Nachhilfe hervorheben. Sie bietet nicht nur individuelle Unterstützung und schließt Wissenslücken, sondern stärkt auch das Selbstvertrauen und zielt auf gezielte Prüfungsvorbereitung sowie die Überwindung von Lernbarrieren ab. Die Langzeitwirkung auf die Bildung wird gefördert, während praktische Anwendungen im Alltag ein tieferes Verständnis schaffen. Nachhilfe weckt Neugier und Motivation, und sie formt eine lebenslange Begeisterung für das Lernen. Bei Librum Learning UG sind wir überzeugt, dass maßgeschneiderte Unterstützung für jeden Schüler unerlässlich ist, um das volle Potenzial auszuschöpfen und Bildungsziele zu erreichen. Unser Engagement erstreckt sich über das Klassenzimmer hinaus, um Bildung als einen kontinuierlichen Prozess zu fördern, der die Grundlage für persönliche und berufliche Entfaltung legt.</p>
+                </div>
+                    <div class="course-image">
+                        <img src="Bilder/LibrumLearning/bartosch.png" alt="Course Image">
+                   </div>
+                </div>
+        </div>
+
+        <div class="course-content alternate-course">
+            <div class="featured-course alternate-style">
+                <div class="course-text">
+                    <h2>Alona Ruszkowski</h2>
+                    <p>Die Bildungswelt erfährt eine besondere Bereicherung durch außergewöhnliche Individuen, die mit ihrem Wissen, ihrer Leidenschaft und ihrem Engagement das Lernen zu einer inspirierenden Reise gestalten. Eine solche herausragende Persönlichkeit ist Alona Ruszkowski, eine Bachelor-Absolventin der Philologie mit Fokus auf Englisch und Deutsch. Mit ukrainischen Wurzeln verbindet sie nicht nur eine tiefe Sprachliebe, sondern auch eine aufrichtige Hingabe für das Lehren, die dauerhaften Einfluss auf ihre Schüler hinterlässt. Ihre interaktive Lehrmethode ermutigt zu aktivem Engagement, fördert tieferes Verständnis und weckt Neugierde. Alona geht über das Klassenzimmer hinaus und inspiriert durch kulturelle Austauschprojekte sowie literarische Aktivitäten. Ihr Beitrag zur Bildung reicht über die Vermittlung von Sprachkenntnissen hinaus und formt auf nachhaltige Weise die Denkweisen und Horizonte ihrer Schülerschaft.</p>
+                    <a href="kurse.html" class="btn">Zu den Kursen</a>
+                </div>
+                    <div class="course-image">
+                        <img src="Bilder/LibrumLearning/alona.jpg" alt="Course Image">
+                   </div>
+                   
+                </div>
+        </div>
+
+
+        
+    <div id="footer"></div>
+    <script>
+        // JavaScript: Header-Inhalt abrufen und einfügen
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        // JavaScript: Footer-Inhalt abrufen und einfügen
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
