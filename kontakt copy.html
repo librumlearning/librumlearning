@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Crystal Math Online Courses</title>
-        <link rel="stylesheet" href="css/index.css"> <!-- Verlinke hier deine CSS-Datei für das Styling -->
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librum Learning</title>
+    <link rel="stylesheet" href="css/index.css"> <!-- Verlinke hier deine CSS-Datei für das Styling -->
+</head>
 <body>
 
     <div id="header"></div>
@@ -16,12 +16,14 @@
         
         <h2>Kontakiere uns!</h2>
         <p> Deine Meinung ist uns wichtig! Bei Fragen, Anliegen oder einfach nur, um Hallo zu sagen, nutze gerne das Kontaktformular unten. Wir sind hier, um dir zu helfen und freuen uns auf deine Nachricht.</p>
-        <form action="deine_verarbeitungs_script.php" method="POST">
             <label for="vorname">Vorname:</label>
             <input type="text" id="vorname" name="vorname" placeholder="Dein Vorname">
 
             <label for="nachname">Nachname:</label>
             <input type="text" id="nachname" name="nachname" placeholder="Dein Nachname">
+
+            <label for="betreff">Betreff:</label>
+            <input type="text" id="betreff" name="betreff" placeholder="Dein Betreff">
 
             <label for="email">E-Mail-Adresse<span class="required-field">*</span>:</label>
             <input type="email" id="email" name="email" placeholder="Deine E-Mail-Adresse" required>
@@ -29,7 +31,7 @@
             <label for="nachricht">Nachricht<span class="required-field">*</span>:</label>
             <textarea id="nachricht" name="nachricht" placeholder="Deine Nachricht" rows="4" required></textarea>
 
-            <button type="submit">Nachricht senden</button>
+            <button type="button" id="sendEmail">Nachricht senden</button>
         </form>
     </div>
 
@@ -50,5 +52,20 @@
                 document.getElementById('footer').innerHTML = data;
             });
     </script>
+
+<script>
+    document.getElementById('sendEmail').addEventListener('click', function() {
+        var vorname = encodeURIComponent(document.getElementById('vorname').value);
+        var nachname = encodeURIComponent(document.getElementById('nachname').value);
+        var email = encodeURIComponent(document.getElementById('email').value);
+        var nachricht = encodeURIComponent(document.getElementById('nachricht').value);
+        var betreff = encodeURIComponent(document.getElementById('betreff').value); // Betreff hinzufügen
+        
+        var emailLink = 'mailto:info@librumlearning.com?subject=' + betreff + '&body=' + nachricht; // Betreff einfügen
+        
+        window.location.href = emailLink;
+    });
+</script>
+
 </body>
 </html>
