@@ -337,19 +337,3 @@ nav ul li .sub-menu li a:hover {
     color: #3498db;
 }
 
-
-/* Stile für Desktop-Bildschirme */
-@media screen and (min-width: 1024px) {
-    /* Ihre Desktop-Stile hier */
-  }
-  
-  /* Stile für Tablets */
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Ihre Tablet-Stile hier */
-  }
-  
-  /* Stile für Mobilgeräte */
-  @media screen and (max-width: 767px) {
-    /* Ihre Mobil-Stile hier */
-  }
-  
