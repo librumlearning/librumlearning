@@ -1,11 +1,11 @@
 /*Styling of the background */
 body {
-    background-color: #3498db; /*alternatives hellblau #b4cccd */
+    background-color: #81c6f3; /*alternatives hellblau #b4cccd */
 }
 
 /* Header styling */
 header {
-    background-color: #3498db;
+    background-color: #8ac7ef;
     color: #fff;
     text-align: center;
     padding: 40px 0; /* Oben 40px, Unten 40px */
@@ -134,7 +134,7 @@ main {
 footer {
     text-align: center;
     padding: 30px 0;
-    background-color: #3498db;
+    background-color: #81c6f3;
     color: #ecf0f1;
 }
 
@@ -166,7 +166,7 @@ nav .logo img {
 
 /* Navigation styling */
 nav {
-    background-color: #3498db;
+    background-color: #81c6f3;
     display: flex;
     align-items: center;
     justify-content: space-between; /* Verteilt Logo und Links */
