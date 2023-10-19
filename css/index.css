@@ -98,7 +98,7 @@ main {
 
 
 /* Button styling */
-.btn {
+.btn, #showSolutionButton {
     display: inline-block;
     background-color: #3498db;
     color: #fff;
@@ -318,5 +318,72 @@ nav ul li .sub-menu li a {
 
 nav ul li .sub-menu li a:hover {
     color: #3498db;
+}
+
+
+
+
+
+.kurs-info .zusatz-info {
+    position: relative;
+}
+
+.hover-info::before {
+    content: attr(data-tooltip);
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    top: 0; /* Ändere die Position hier */
+    left: 1%; /* Ändere die Position hier */
+    margin-left: 10px; /* Abstand zwischen Text und Tooltip-Box */
+}
+
+.hover-info:hover::before {
+    display: block;
+}
+
+.hover-info {
+    color: #555; /* Hier die gewünschte Farbe (z.B. Rot) eintragen */
+}
+
+/* Styling für den Mathematik-Abschnitt */
+#math-task {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 20px;
+}
+
+/* Styling für den Matheaufgaben-Titel */
+#math-task h2 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+/* Styling für den Button */
+#generateIntegralButton {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#generateIntegralButton:hover {
+    background-color: #0056b3;
+}
+
+/* Styling für die Lösung */
+#solutionText {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    display: none; /* Standardmäßig ausgeblendet */
 }
 

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Hier wird die HTML-Version deklariert und die Sprache auf Englisch festgelegt. -->
+    <meta charset="UTF-8">
+    <!-- Die Zeichencodierung wird auf UTF-8 gesetzt. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Die Viewport-Metaangabe wird verwendet, um die Darstellung auf verschiedenen Geräten anzupassen. -->
+    <title>Crystal Math Online Courses</title>
+    <!-- Der Titel der Webseite wird festgelegt, der im Browser-Tab angezeigt wird. -->
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <!-- Hier wird das MathJax-Script eingebunden, um mathematische Ausdrücke auf der Webseite darzustellen. -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Hier wird eine externe CSS-Datei (index.css) für das Styling der Webseite verlinkt. -->
+</head>
+<body>
+    <div id="header"></div>
+
+    <div id="math-task">
+        <!-- Hier werden zwei Haupt-Divs erstellt, eines für den Header und eines für die mathematische Aufgabe. -->
+        <h2>Aufgabe: Integralrechnung</h2>
+        <!-- Eine Überschrift für die mathematische Aufgabe. -->
+        <p>Berechne das folgende Integral mit Hilfe der Kettenregel</p>
+        <!-- Ein Textabschnitt, der die Aufgabenstellung beschreibt. -->
+        <p id="integralText"></p>
+        <!-- Ein leeres Paragraph-Element, das später mit mathematischem Inhalt gefüllt wird. -->
+        <button id="showSolutionButton">Lösung anzeigen</button>
+        <!-- Ein Button, um die Lösung anzuzeigen. -->
+        <p  id="solutionText" style="display: none;"></p>
+        <!-- Ein leeres Paragraph-Element, das später die Lösung enthält (anfangs ausgeblendet). -->
+        <p><a href="a_integrale.html" class="btn">Generiere neues Integral</a></p>
+        <!-- Ein Link, der zu einer anderen Seite führt, um ein neues Integral zu generieren. -->
+    </div>
+    <div id="footer"></div>
+
+    <script>
+        // JavaScript: Funktion zum Generieren eines zufälligen Integrals
+        function generateRandomValues() {
+            const a = Math.floor(Math.random() * 2) + 2; // Zufällige Zahl zwischen 1 und 3
+            const b = Math.floor(Math.random() * 2) + 4; // Zufällige Zahl zwischen 4 und 8
+            const n = Math.floor(Math.random() * 3) + 2; // Zufällige Zahl zwischen 2 und 6
+            const m = Math.floor(Math.random() * 3) + 2; // Zufällige Zahl zwischen 2 und 6
+            return { a, b, n, m };
+        }
+
+        // JavaScript: Funktion zur Berechnung der Lösung
+        function calculateSolution(a, b, n, m) {
+            // Berechnung der Lösung des Integrals
+            const solution = Math.pow((n * b + m), (n + 1)) / (n + 1);
+            return solution;
+        }
+
+        // JavaScript: Funktion zum Umwandeln einer Dezimalzahl in einen Bruch
+        function decimalToFraction(decimal) {
+            const tolerance = 1.0E-6;
+            let h1 = 1;
+            let h2 = 0;
+            let k1 = 0;
+            let k2 = 1;
+            let b = decimal;
+            do {
+                let a = Math.floor(b);
+                let aux = h1;
+                h1 = a * h1 + h2;
+                h2 = aux;
+                aux = k1;
+                k1 = a * k1 + k2;
+                k2 = aux;
+                b = 1 / (b - a);
+            } while (Math.abs(decimal - h1 / k1) > decimal * tolerance);
+        
+            if (k1 === 1) {
+                return h1.toString();
+            } else {
+                return h1 + "/" + k1;
+            }
+        }
+
+        // JavaScript: Funktion zum Aktualisieren der Anzeige mit zufälligen Werten und Lösung
+        function updateMathTask() {
+            const { a, b, n, m } = generateRandomValues();
+            const integralText = `$$\\int_{{0}}^{${b}} (${n}x+${m})^{${n}} \\, \\mathrm{d}x$$`;
+            const solution = calculateSolution(a, b, n, m);
+
+            const fractionSolution = decimalToFraction(solution);
+
+            document.getElementById('integralText').innerHTML = integralText;
+
+            document.getElementById('showSolutionButton').addEventListener('click', () => {
+                document.getElementById('solutionText').textContent = `Der Wert des Integrals ist:  ${fractionSolution}`;
+                var solutionTextElement = document.getElementById('solutionText');
+                solutionTextElement.style.display = 'block';
+                solutionTextElement.style.fontFamily = 'normal'; // Ändern Sie die Schriftart auf "normal"
+                solutionTextElement.style.fontWeight = 'normal'; // Ändern Sie das Schriftgewicht auf "normal"
+            });
+            
+        }
+
+        // Initial generiertes Integral anzeigen
+        updateMathTask();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
