@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sprachauswahl</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Startseite</a></li>
+            <li><a href="#">Über uns</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li id="language-select">
+                <label for="language">Sprache auswählen:</label>
+                <select id="language">
+                    <option value="de">Deutsch</option>
+                    <option value="en">Englisch</option>
+                    <option value="uk">Ukrainisch</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="greeting">
+        Hallo Welt
+    </div>
+
+    <script>
+        const languageSelect = document.getElementById("language");
+        const greeting = document.getElementById("greeting");
+
+        languageSelect.addEventListener("change", () => {
+            const selectedLanguage = languageSelect.value;
+
+            if (selectedLanguage === "de") {
+                greeting.textContent = "Hallo Welt";
+            } else if (selectedLanguage === "en") {
+                greeting.textContent = "Hello, World";
+            } else if (selectedLanguage === "uk") {
+                greeting.textContent = "Привіт, світе";
+            }
+        });
+    </script>
+</body>
+</html>

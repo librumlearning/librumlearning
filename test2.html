@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1">
+    <title>Librum Learning</title>
+    <link rel="stylesheet" href="css/index.css"> <!-- Verlinke hier deine CSS-Datei für das Styling -->
+</head>
+
+<body>
+    <div id="header"></div>
+    <main>
+        <section class="featured-course">
+            <h2>Matheabitur 2024 in Baden-Württemberg mit Dr. Bartosch Ruszkowski!</h2>
+            <p>Mein <b>Mathematik Online Vorbereitungskurs vom 25. März bis einschließlich 28. März 2024</b> bietet dir eine maßgeschneiderte Vorbereitung, die dich motivieren wird. 
+            </p>
+            <div class="kurs-info">
+                <div class="zusatz-info">
+                    <ul>
+                        <li>
+                            <b>Interaktive Lernerfahrung             <button id="show-info-button">Erfahre mehr</button> </b>
+                            <p id="info-text" style="display: none;">
+                                Durch dynamisch-programmierte Matheaufgaben erlebst Du eine aufregende und effektive Methode, um mathematische Fähigkeiten zu entwickeln und zu vertiefen. Sie fördert dein Verständnis und macht Spaß, was das Lernen zu einer bereichernden Erfahrung macht.
+                            </p>
+                        </li>
+                        <li>
+                            <b>Kosten        <button id="show-info-button">Erfahre mehr</button> </b>
+                            <p id="info-text" style="display: none;">
+                                  Kosten sind 5 Eruo
+                            </p>
+                        </li>
+
+                        <!-- Füge weitere Listenelemente hier hinzu -->
+                    </ul>
+                </div>
+                <p>Melde dich einfach per E-Mail an. Zahlungsmodalitäten werden dann über Überweisung oder Paypal abgewickelt.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+    <script>
+        // JavaScript, um den Text bei Klick auf den Button anzuzeigen
+        const showInfoButton = document.getElementById("show-info-button");
+        const infoText = document.getElementById("info-text");
+        
+        showInfoButton.addEventListener("click", () => {
+            infoText.style.display = "block";
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
