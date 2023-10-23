@@ -54,11 +54,14 @@ main {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.featured-course h2, .popular-courses h2,.contact-form h2 {
+
+
+.featured-course h2, .popular-courses h2,.contact-form h2, #math-task h2 {
     font-size: 2rem;
     margin-bottom: 10px;
     color: #2c3e50;
 }
+
 
 /* Course subtitle styling */
 .featured-course h3, .popular-courses h3,.contact-form  h3 {
