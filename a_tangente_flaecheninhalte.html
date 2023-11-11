@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librum Learning</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div id="math-task">
+        <h2>Aufgabe: Tangente und Flächeninhalte</h2>
+        <p>Gegeben ist die folgende Funktion:</p>
+        <p id="funktion"></p>
+        <p>Bestimme die Tangente dieser Funktion im Ursprung und berechne den Flächeninhalt zwischen der Tangente und der Funktion.</p>
+        <button id="showSolutionButton">Lösung anzeigen</button>
+        <p id="solutionText" style="display: none;"></p>
+        <p><a href="a_tangente_flaecheninhalte.html" class="btn">Generiere die Aufgabe neu</a></p>
+        <a href="kurse.html" class="btn">Zu den Kursen</a>
+    </div>
+    <div id="footer"></div>
+
+    <script>
+        // JavaScript: Funktion zum Generieren eines zufälligen Integrals
+        function generateRandomValues() {
+            const a = 6 * Math.floor(Math.random() * 6) + 6; // Zufällige Zahl zwischen 6 und 36
+            const b = a; // Gleich a für eine zufällige Zahl zwischen 6 und 36
+            return { a, b };
+        }
+
+        // JavaScript: Funktion zur Berechnung der Lösung
+        function calculateSolution(a, b) {
+            const solution = 2 * a;
+            return solution;
+        }
+
+        function calculateIntegral(a) {
+            const resultintegral = a / 6;
+            return resultintegral;
+        }
+
+        function calculateIntersectionPoint(a, b) {
+            const intersectionpoint = 2 - b / a;
+            return intersectionpoint;
+        }
+
+        // JavaScript: Funktion zum Aktualisieren der Anzeige mit zufälligen Werten und Lösung
+        function updateMathTask() {
+            const { a, b } = generateRandomValues();
+            const funktion = `$$ f(x) = ${a}x^2 + ${b}x $$`;
+            const solution = calculateSolution(a, b);
+            const tangente = `t(x) = ${solution}x `;
+            const resultintegral = calculateIntegral(a);
+            const intersectionpoint = calculateIntersectionPoint(a, b);
+
+            document.getElementById('funktion').innerHTML = funktion;
+
+            document.getElementById('showSolutionButton').addEventListener('click', () => {
+                const solutionTextElement = document.getElementById('solutionText');
+                solutionTextElement.innerHTML = `Die Funktion der Tangente ist gegeben durch: t(x) = ${solution}x. Lass uns die Schnittpunkte zwischen dieser Tangente und der Funktion 
+                f berechnen. Diese ergeben sich als x-Koordinaten 0 und 1. Der Flächeninhalt zwischen der Funktion 
+                f und der Tangente beträgt dann ${resultintegral}. Falls du weitere Einzelheiten zur Lösung erfahren möchtest, melde dich gerne zu meinem Kurs an. Ich stehe zur Verfügung.`
+                ;
+                solutionTextElement.style.display = 'block';
+                solutionTextElement.style.fontFamily = 'normal';
+                solutionTextElement.style.fontWeight = 'normal';
+            });
+        }
+
+        // Initial generiertes Integral anzeigen
+        updateMathTask();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
