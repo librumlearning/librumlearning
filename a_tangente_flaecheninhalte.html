@@ -24,10 +24,12 @@
 
     <script>
         // JavaScript: Funktion zum Generieren eines zufälligen Integrals
+        // JavaScript: Funktion zum Generieren eines zufälligen Integrals
         function generateRandomValues() {
-            const a = 6 * Math.floor(Math.random() * 6) + 6; // Zufällige Zahl zwischen 6 und 36
-            const b = a; // Gleich a für eine zufällige Zahl zwischen 6 und 36
-            return { a, b };
+            const a = Math.floor(Math.random() * 4) + 2;
+            const b = a* (Math.floor(Math.random() * 3) + 1); 
+            const c = 6 * Math.floor(Math.random() * 6) + 6;
+            return { a, b, c};
         }
 
         // JavaScript: Funktion zur Berechnung der Lösung
@@ -36,32 +38,36 @@
             return solution;
         }
 
-        function calculateIntegral(a) {
-            const resultintegral = a / 6;
+        function calculateIntegral(a,b) {
+            const resultintegral = Math.pow(b, 4) /(Math.pow(a, 3))/12 ;;
             return resultintegral;
         }
 
         function calculateIntersectionPoint(a, b) {
-            const intersectionpoint = 2 - b / a;
+            const intersectionpoint = b / a;
             return intersectionpoint;
         }
 
         // JavaScript: Funktion zum Aktualisieren der Anzeige mit zufälligen Werten und Lösung
         function updateMathTask() {
-            const { a, b } = generateRandomValues();
-            const funktion = `$$ f(x) = ${a}x^2 + ${b}x $$`;
+            const { a, b, c } = generateRandomValues();
+            const funktion = `$$ f(x) = ${a}x^3 - ${b}x^2+${c}x $$`;
             const solution = calculateSolution(a, b);
-            const tangente = `t(x) = ${solution}x `;
-            const resultintegral = calculateIntegral(a);
+            const tangente = `t(x) = ${c}x `;
+            const resultintegral = calculateIntegral(a,b);
             const intersectionpoint = calculateIntersectionPoint(a, b);
 
             document.getElementById('funktion').innerHTML = funktion;
 
             document.getElementById('showSolutionButton').addEventListener('click', () => {
                 const solutionTextElement = document.getElementById('solutionText');
-                solutionTextElement.innerHTML = `Die Funktion der Tangente ist gegeben durch: t(x) = ${solution}x. Lass uns die Schnittpunkte zwischen dieser Tangente und der Funktion 
-                f berechnen. Diese ergeben sich als x-Koordinaten 0 und 1. Der Flächeninhalt zwischen der Funktion 
-                f und der Tangente beträgt dann ${resultintegral}. Falls du weitere Einzelheiten zur Lösung erfahren möchtest, melde dich gerne zu meinem Kurs an. Ich stehe zur Verfügung.`
+                solutionTextElement.innerHTML = `Die Funktion der Tangente ist gegeben durch: t(x) = ${c}x. <br>
+                <br>
+                Lass uns die Schnittpunkte zwischen dieser Tangente und der Funktion 
+                f berechnen. Diese ergeben sich als x-Koordinaten 0 und ${intersectionpoint}. <br> <br>
+                
+                Der Flächeninhalt zwischen der Funktion   
+                f und der Tangente ist dann das Integral von 0 bis ${intersectionpoint} integriert über t(x)-f(x) auf [0, ${intersectionpoint}]. Wichtig ist, dass t(x)>f(x) ist, da z.b. t(0.5)>f(0.5) gilt und wir keine weitern Schnittpunkte haben.  beträgt dann ${b}<sup>4</sup> *  ${a}<sup>-3</sup>*12 =${resultintegral}. Falls du weitere Einzelheiten zur Lösung erfahren möchtest, melde dich gerne zu meinem Kurs an. Ich stehe zur Verfügung!`
                 ;
                 solutionTextElement.style.display = 'block';
                 solutionTextElement.style.fontFamily = 'normal';
@@ -75,3 +81,6 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+<!--<p>Der Ausdruck \(x^2\) in LaTeX-Stil:</p>-->
