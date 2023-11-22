@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Hier wird die HTML-Version deklariert und die Sprache auf Englisch festgelegt. -->
+    <meta charset="UTF-8">
+    <!-- Die Zeichencodierung wird auf UTF-8 gesetzt. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Die Viewport-Metaangabe wird verwendet, um die Darstellung auf verschiedenen Geräten anzupassen. -->
+    <title>Librum Learning</title>
+    <!-- Der Titel der Webseite wird festgelegt, der im Browser-Tab angezeigt wird. -->
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <!-- Hier wird das MathJax-Script eingebunden, um mathematische Ausdrücke auf der Webseite darzustellen. -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Hier wird eine externe CSS-Datei (index.css) für das Styling der Webseite verlinkt. -->
+</head>
+<body>
+    <div id="header"></div>
+
+    <div id="math-task">
+        <!-- Hier werden zwei Haupt-Divs erstellt, eines für den Header und eines für die mathematische Aufgabe. -->
+        <h2>Aufgabe: Kurvendiskussion</h2>
+        <p>Wir betrachten die folgende Funktion</p>
+        <p id="funktion"></p>
+        <p>Man berechne alle Extremstellen und erkläre , um welche Art von Extremstelle es sicht handelt</p>
+        <button id="showSolutionButton">Lösung anzeigen</button>
+        <p  id="solutionText" style="display: none;"></p>
+        <p><a href="a_kurvendiskussion.html" class="btn">Generiere neue Aufgabe</a></p>
+    </div>
+    <div id="footer"></div>
+
+    <script>
+        // JavaScript: Funktion zum Generieren eines zufälligen Integrals
+        function generateRandomValues() {
+            const a = (Math.floor(Math.random() * 9) +1); // Zufällige Zahl zwischen 1 und 3
+            const b = Math.floor(Math.random() * 20) + 1; // Zufällige Zahl zwischen 4 und 8
+            const n = 2*(Math.floor(Math.random() * 10) + 1); // Zufällige Zahl zwischen 2 und 6
+            const m = Math.floor(Math.random() * 3) + 2; // Zufällige Zahl zwischen 2 und 6
+            return { a, b, n, m };
+        }
+
+        // JavaScript: Funktion zur Berechnung der Lösung
+        function calculateSolution(a) {
+            // Berechnung der Lösung des Integrals
+            const solution = a
+            return solution;
+        }
+
+
+        // JavaScript: Funktion zum Aktualisieren der Anzeige mit zufälligen Werten und Lösung
+        function updateMathTask() {
+            const { a, b, n, m } = generateRandomValues();
+            const funktion = `$$ f(x) = ${b} \\cdot x^{${n}} \\cdot e^{-${a}\\cdot x} \\ \\ \\mathrm{für} \\ \\mathrm{alle} \\ x\\in \\mathbb{R}. $$`;
+            const solution = calculateSolution(a);
+
+            document.getElementById('funktion').innerHTML = funktion;
+
+            document.getElementById('showSolutionButton').addEventListener('click', () => {
+                document.getElementById('solutionText').textContent = `Die Extremstellen sind 0 und ${n}. Man beachte, dass die Funktion immer positiv ist
+                und für für große negative Werte die Funktion gegen unendlich strebt. Daher besitzt die Funktion im Punkt (0/0) einen Tiefpunkt, da f(0)=0 ist. Im Punkt ${n} liegt ein lokales Maximum vor, da die Funktion für große x gegen null konvergiert(sich der Null annähert)  `;
+                var solutionTextElement = document.getElementById('solutionText');
+                solutionTextElement.style.display = 'block';
+                solutionTextElement.style.fontFamily = 'normal'; // Ändern Sie die Schriftart auf "normal"
+                solutionTextElement.style.fontWeight = 'normal'; // Ändern Sie das Schriftgewicht auf "normal"
+            });
+            
+        }
+
+        // Initial generiertes Integral anzeigen
+        updateMathTask();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
