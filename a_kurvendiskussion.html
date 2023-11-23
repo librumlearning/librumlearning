@@ -51,7 +51,7 @@
         // JavaScript: Funktion zum Aktualisieren der Anzeige mit zufälligen Werten und Lösung
         function updateMathTask() {
             const { a, b, n, m } = generateRandomValues();
-            const funktion = `$$ f(x) = ${b} \\cdot x^{${n}} \\cdot e^{-${a}\\cdot x} \\ \\ \\mathrm{für} \\ \\mathrm{alle} \\ x\\in \\mathbb{R}. $$`;
+            const funktion = `$$ f(x) = ${b} \\cdot x^{${n}} \\cdot \\mathrm{e}^{-${a}\\cdot x} \\ \\ \\mathrm{für} \\ \\mathrm{alle} \\ x\\in \\mathbb{R}. $$`;
             const solution = calculateSolution(a);
 
             document.getElementById('funktion').innerHTML = funktion;
