@@ -51,7 +51,7 @@
         // JavaScript: Funktion zum Aktualisieren der Anzeige mit zufälligen Werten und Lösung
         function updateMathTask() {
             const { a, b, c } = generateRandomValues();
-            const funktion = `$$ f(x) = ${a}x^3 - ${b}x^2+${c}x $$`;
+            const funktion = `$$ f(x) = ${a}x^3 - ${b}x^2+${c}x \\ \\ \\mathrm{für} \\ \\mathrm{alle} \\ x\\in \\mathbb{R}. $$`;
             const solution = calculateSolution(a, b);
             const tangente = `t(x) = ${c}x `;
             const resultintegral = calculateIntegral(a,b);
