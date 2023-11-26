@@ -57,8 +57,8 @@
             document.getElementById('funktion').innerHTML = funktion;
 
             document.getElementById('showSolutionButton').addEventListener('click', () => {
-                document.getElementById('solutionText').textContent = `Die Extremstellen sind 0 und ${n}. Man beachte, dass die Funktion immer positiv ist
-                und für für große negative Werte die Funktion gegen unendlich strebt. Daher besitzt die Funktion im Punkt (0/0) einen Tiefpunkt, da f(0)=0 ist. Im Punkt ${n} liegt ein lokales Maximum vor, da die Funktion für große x gegen null konvergiert(sich der Null annähert)  `;
+                document.getElementById('solutionText').textContent = `Die Extremstellen sind 0 und ${n}/${a}. Man beachte, dass die Funktion immer positiv ist
+                und für für große negative Werte die Funktion gegen unendlich strebt. Daher besitzt die Funktion im Punkt (0/0) einen Tiefpunkt, da f(0)=0 ist. Im Punkt ${n}/${a} liegt ein lokales Maximum vor, da die Funktion für große x gegen null konvergiert(sich der Null annähert)  `;
                 var solutionTextElement = document.getElementById('solutionText');
                 solutionTextElement.style.display = 'block';
                 solutionTextElement.style.fontFamily = 'normal'; // Ändern Sie die Schriftart auf "normal"
