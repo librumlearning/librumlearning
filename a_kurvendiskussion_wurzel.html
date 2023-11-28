@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librum Learning</title>
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <div id="math-task">
+        <h2>Aufgabe: Kurvendiskussion: Wurzeln </h2>
+        <p>Wir betrachten die folgende Wurzelfunktion</p>
+        <p id="funktion"></p>
+        <p>Man berechne alle Extremstellen und erkläre, um welche Art von Extremstelle es sich handelt. und gebe den maximalen Definitionsbereich an</p>
+        <button id="showSolutionButton">Lösung anzeigen</button>
+        <p id="solutionText" style="display: none;"></p>
+        <p><a href="a_kurvendiskussion.html" class="btn">Generiere neue Aufgabe</a></p>
+    </div>
+    <div id="footer"></div>
+
+    <script>
+        function generateRandomValues() {
+            const a = Math.floor(Math.random() * 9) + 1;
+            const b = Math.floor(Math.random() * 20) + 1;
+            const n = 2 * (Math.floor(Math.random() * 10) + 1);
+            return { a, b, n };
+        }
+
+        function calculateSolution(a, n) {
+            // Hier könnte die Berechnung der Lösung für Wurzeln eingefügt werden
+            const solution = `Diese Funktion besitzt nie eine Extremstelle und der Maximale Definitionsbereich besteht allen positiven Zahlen einschließlich der Null.`; 
+            return solution;
+        }
+
+        function updateMathTask() {
+            const { a, b, n } = generateRandomValues();
+            const funktion = `$$ f(x) = ${b} \\cdot \\sqrt[${n}]{{x}} \\ \\ \\mathrm{für} \\ \\mathrm{alle} \\ x\\in \\mathbb{R}. $$`;
+            const solution = calculateSolution(a, n);
+
+            document.getElementById('funktion').innerHTML = funktion;
+
+            document.getElementById('showSolutionButton').addEventListener('click', () => {
+                document.getElementById('solutionText').textContent = solution;
+                var solutionTextElement = document.getElementById('solutionText');
+                solutionTextElement.style.display = 'block';
+                solutionTextElement.style.fontFamily = 'normal';
+                solutionTextElement.style.fontWeight = 'normal';
+            });
+        }
+
+        updateMathTask();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
